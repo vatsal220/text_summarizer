@@ -1,2 +1,2 @@
 # text_summarizer
-This project will summarize text and predict the following sentences given an input text
+This repository will summarize text using the `bert-extractive-summarizer`
