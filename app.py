@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
-import torch
-model = torch.load('summarizer_model.pt')
+from summarizer import Summarizer
+
+model = Summarizer()
 
 app = Flask(__name__)
 
