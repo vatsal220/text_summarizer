@@ -11,27 +11,38 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 
+<style type="text/css">
+
+    input {
+        height: auto;
+        /* background-color: white */
+    }
+</style>
+
 </head>
 
 <body>
 
  <div class="login">
 
-	<h1>Natural Language Processing</h1>
+	<h1>Named Entity Recognition</h1>
 
    <head>
       <title>HTML img Tag</title>
    </head>
-
- <!-- </form action = "/summarizer" method = "POST"> -->
- <!-- action="{{ url_for('summarizer')}}" prob not neededd but double check-->
- <form action="{{ url_for('summarizer')}}" method="post">
-    <div id="button"><a type = "submit"  href="{{ url_for('summarizer') }}" style= "text-decoration:none;" class="btn btn-primary btn-block btn-large"> Text Summarizer </a></div>
-<p> </p>
-<form action="{{ url_for('ner')}}" method="post">
-    <div id="button"><a type = "submit"  href="{{ url_for('ner') }}" style= "text-decoration:none;" class="btn btn-primary btn-block btn-large"> Named Entity Recognition </a></div>
+   <p> Given 2 pieces of text, this will determine the similarity between the two contents</p>
+   <p> Enter your text below : </p>
 
 
+    <form action="{{ url_for('predict_ner')}}" method="post">
+      <textarea type="textarea" name="string1" placeholder="Enter your text here." rows ="8" cols = "59" required="required"> </textarea>
+    	<textarea type="textarea" name="string2" placeholder="Enter your text here." required="required" rows ="8" cols = "59"> </textarea>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Similary</button>
+    </form>
+
+   <br>
+   {{ prediction_text }}
 
    <p> <sub> © vatsalp.com </sub> </p>
 
