@@ -25,10 +25,17 @@
 
  <!-- </form action = "/summarizer" method = "POST"> -->
  <!-- action="{{ url_for('summarizer')}}" prob not neededd but double check-->
+ <!-- {% if message %}
+ <p> class = "message" > {{message | safe}} </p>
+
+ {% endif %} -->
  <form action="{{ url_for('summarizer')}}" method="post">
+
     <div id="button"><a type = "submit"  href="{{ url_for('summarizer') }}" style= "text-decoration:none;" class="btn btn-primary btn-block btn-large"> Text Summarizer </a></div>
 <p> </p>
 <form action="{{ url_for('ner')}}" method="post">
+
+
     <div id="button"><a type = "submit"  href="{{ url_for('ner') }}" style= "text-decoration:none;" class="btn btn-primary btn-block btn-large"> Named Entity Recognition </a></div>
 
 

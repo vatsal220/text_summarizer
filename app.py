@@ -27,7 +27,9 @@ def predict():
     '''
     body = str(request.form['Body'])
     sentence_count = int(request.form['sentence_count'])
-    result = generate_summary(data = body, top_n = sentence_count)
+    if '. ' not in body:
+        return render_template('summarizer.html', message= 'Please enter the text of complete sentences to summarize')
+    result = ts.generate_summary(data = body, top_n = sentence_count)
     return render_template('summarizer.html', prediction_text='{}'.format(result))
 
 @app.route('/ner', methods = ['GET', 'POST'])
